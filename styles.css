@@ -86,6 +86,7 @@ body {
     height: 50vh;
 
     perspective: 800px;
+    will-change: all;
 }
 
 #grafplace .item {
