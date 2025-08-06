@@ -23,15 +23,24 @@
     </div>
     <img src="Yin_and_yang.svg" alt="Поменять тему" id="changetheme" onclick=changetheme()>
     <script>
+        if (localStorage.getItem("theme") === "light" || localStorage.getItem("theme") === null) {
+            document.querySelector("html").style.filter = "invert(0)";
+            document.querySelector("#changetheme").style.rotate = "0deg";
+        } else {
+            document.querySelector("html").style.filter = "invert(1)";
+            document.querySelector("#changetheme").style.rotate = "360deg";
+        }
         const html = document.querySelector("html");
         const but = document.querySelector("#changetheme");
         function changetheme() {
             if (html.style.filter !== "invert(1)") {
                 html.style.filter = "invert(1)";
                 but.style.rotate = "360deg";
+                localStorage.setItem("theme", "dark");
             } else {
                 html.style.filter = "invert(0)";
                 but.style.rotate = "0deg";
+                localStorage.setItem("theme", "light");
             }
 
         }

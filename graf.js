@@ -207,7 +207,7 @@ function tick(time) {
             processInterval--; // ускоряем обратно
         }
 
-        console.log(`FPS: ${fps}, interval: ${processInterval}`);
+        // console.log(`FPS: ${fps}, interval: ${processInterval}`);
     }
 
     // === Основной обработчик ===

@@ -19,7 +19,7 @@ html {
     filter: invert(0); width: 100dvw; overflow-x: hidden;
 }
 
-img {
+.notes img {
     -webkit-user-drag: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -92,7 +92,8 @@ body {
     top: 0;
     z-index: 0;
     width: 100vw;
-    overflow-x: hidden;
+    overflow: hidden;
+    overflow-y: visible;
     height: 50vh;
 
     perspective: 800px;
@@ -217,5 +218,8 @@ body {
 @media (max-width: 600px) {
   .notes {
     column-width: 100%;
+  }
+  .note {
+    width: calc(100% - 2 * var(--index));
   }
 }
