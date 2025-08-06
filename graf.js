@@ -182,10 +182,40 @@ class Itm {
     items.push(new Itm(key));
 });
 
+let lastTime = 0;
+let frames = 0;
+let fps = 60;
+let lastFpsUpdate = 0;
 
-function tick() {
-    items.forEach(itm => itm.process());
+let processInterval = 1; // раз в сколько кадров делать .process()
+let frameCounter = 0;
+
+function tick(time) {
     requestAnimationFrame(tick);
+
+    // === FPS измерение ===
+    frames++;
+    if (time - lastFpsUpdate >= 1000) {
+        fps = frames;
+        frames = 0;
+        lastFpsUpdate = time;
+
+        // === Адаптация ===
+        if (fps < 30 && processInterval < 5) {
+            processInterval++; // замедляем обработку
+        } else if (fps > 50 && processInterval > 1) {
+            processInterval--; // ускоряем обратно
+        }
+
+        console.log(`FPS: ${fps}, interval: ${processInterval}`);
+    }
+
+    // === Основной обработчик ===
+    if (frameCounter % processInterval === 0) {
+        items.forEach(itm => itm.process());
+    }
+
+    frameCounter++;
 }
 
 requestAnimationFrame(tick);

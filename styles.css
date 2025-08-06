@@ -16,7 +16,16 @@
 
 html {
     transition: filter 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    filter: invert(0);
+    filter: invert(0); width: 100dvw; overflow-x: hidden;
+}
+
+img {
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 body {
@@ -82,7 +91,8 @@ body {
     position: absolute;
     top: 0;
     z-index: 0;
-    width: 100%;
+    width: 100vw;
+    overflow-x: hidden;
     height: 50vh;
 
     perspective: 800px;
@@ -90,6 +100,7 @@ body {
 }
 
 #grafplace .item {
+    will-change: transform, opacity;
     --size: calc(2 * var(--index));
     font-size: calc(var(--size) * 1.5);
     background-image: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.5) 50%, rgba(0, 0, 0, 0.5));
@@ -104,6 +115,7 @@ body {
 }
 
 #grafplace .item .alt {
+    will-change: transform, opacity;
     opacity: 0;
     width: fit-content;
     color: rgba(80, 80, 80, 0.8);
@@ -137,6 +149,7 @@ body {
 
 
 .note {
+    will-change: transform, opacity;
     font-family: "Libertinus Sans", sans-serif;
     font-size: var(--index);
     text-align: center;
