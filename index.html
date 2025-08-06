@@ -2,6 +2,7 @@
 <html lang="ru">
 
 <head>
+    <!-- <style>#loadingScreen {    position: fixed;    top: 0;    left: 0;    width: 100vw;    height: 100dvh;    z-index: 10000;    border: none;    opacity: 1;    transition: opacity 0.5s ease-in-out;}#loadingScreen.unactive {    opacity: 0;    pointer-events: none;}</style> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Osidect</title>
@@ -17,6 +18,21 @@
 </head>
 
 <body>
+    <!-- <iframe src="loading.html" id="loadingScreen"></iframe> -->
+    <!-- <script>
+        const sleep = (ms) => {
+            return new Promise((resolve) => setTimeout(resolve, ms));
+        };
+
+        document.addEventListener("DOMContentLoaded", async () => {
+            const loadingScreen = document.getElementById("loadingScreen");
+            await new Promise((resolve) => setTimeout(resolve, 3000)); // Задержка для демонстрации загрузки
+            loadingScreen.classList.add("unactive");
+            loadingScreen.addEventListener("transitionend", () => {
+                loadingScreen.remove();
+            });
+        });
+    </script> -->
     <!-- <canvas id="noise"></canvas> -->
     <div id="grafplace">
         <!-- <div id="activebar"></div> -->
@@ -67,7 +83,8 @@
         </div>
 
         <div class="note">
-            <img src="ChLogoTech.png" alt="" srcset="">
+            <!-- <img src="ChLogoTech.png" alt="" srcset=""> -->
+            <iframe src="loading.html" id="loadingScreen"></iframe>
         </div>
 
         <div class="note">

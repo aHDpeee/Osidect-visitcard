@@ -186,12 +186,14 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
-.note img {
+.note img, .note iframe {
     width: 100%; height: auto;
   opacity: 0.9; 
-  mix-blend-mode:hard-light;
+  mix-blend-mode:darken;
   filter: saturate(0) ; 
   transition: all 0.5s ease-in-out;
+  border: none;
+  background: none;
 }
 
 .note br {
