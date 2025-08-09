@@ -186,7 +186,7 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
-.note img, .note iframe {
+.note img, .note iframe{
     width: 100%; height: auto;
   opacity: 0.9; 
   mix-blend-mode:darken;
@@ -194,6 +194,18 @@ body {
   transition: all 0.5s ease-in-out;
   border: none;
   background: none;
+  transition: scale 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.note a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+.note:hover img, .note:hover iframe{
+    scale: 1.05;
 }
 
 .note br {
