@@ -193,13 +193,13 @@
 
         requestAnimationFrame(animate);
 
-        mesh.rotation.x += rotationVelocity.x * 3;
-        mesh.rotation.y += rotationVelocity.y * 3;
-        mesh.rotation.z += rotationVelocity.z * 3;
+        mesh.rotation.x += rotationVelocity.x * 2;
+        mesh.rotation.y += rotationVelocity.y * 2;
+        mesh.rotation.z += rotationVelocity.z * 2;
 
-        rotationVelocity.x += 0.0009 * (Math.random() - 0.5);
-        rotationVelocity.y += 0.0009 * (Math.random() - 0.5);
-        rotationVelocity.z += 0.0009 * (Math.random() - 0.5);
+        rotationVelocity.x += 0.0005 * (Math.random() - 0.5);
+        rotationVelocity.y += 0.0005 * (Math.random() - 0.5);
+        rotationVelocity.z += 0.0005 * (Math.random() - 0.5);
 
         if (time - lastTime >= updateInterval) {
           for (let i = 0; i < count; i++) {

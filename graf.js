@@ -160,7 +160,7 @@ class Itm {
     process() {
         if (!this.active) {
             if (this.pos.distTo(center) < sphere_rad) {
-                this.velocity.mult(1.5).add(this.pos.clone().minus(center).normalize().mult(0.08)).normalize();
+                this.velocity.mult(1.5).add(this.pos.clone().minus(center).normalize().mult(0.06)).normalize();
             } else {
                 this.velocity.mult(1.2).add(center.clone().minus(this.pos).normalize().mult(0.05)).normalize();
             }
